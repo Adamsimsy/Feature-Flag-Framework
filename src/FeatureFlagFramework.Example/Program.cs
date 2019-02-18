@@ -17,7 +17,7 @@ namespace FeatureFlagFramework.Example
             {
                 IFeatureFlagClient client = FeatureFlagFramework.Client.Instance;
 
-                if (client.Evaluate("api-633-optimized-matches-endpoint"))
+                if (client.Evaluate("example-feature-flag"))
                 {
                     Console.WriteLine(client.GetType().ToString() + " True");
                 }
