@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace FeatureFlagFramework.Example
 {
@@ -36,7 +37,7 @@ namespace FeatureFlagFramework.Example
                 {
                     Console.WriteLine(client.GetType().ToString() + " False");
                 }
-                Console.ReadKey();
+                Thread.Sleep(1000);
             }
         }
     }
