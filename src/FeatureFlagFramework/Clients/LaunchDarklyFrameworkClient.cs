@@ -16,9 +16,19 @@ namespace FeatureFlagFramework.Clients
 
         public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
 
-        public bool Evaluate(string flagName)
+        public bool Evaluate(string flagName, bool defaultValue)
         {
-            return _client.BoolVariation(flagName, CreateUser(), false);
+            return _client.BoolVariation(flagName, CreateUser(), defaultValue);
+        }
+
+        public int Evaluate(string flagName, int defaultValue)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Evaluate(string flagName, string defaultValue)
+        {
+            throw new NotImplementedException();
         }
 
         static internal User CreateUser()

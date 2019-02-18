@@ -16,9 +16,20 @@ namespace FeatureFlagFramework.Clients
 
         public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
 
-        public bool Evaluate(string flagName)
+        public bool Evaluate(string flagName, bool defaultValue)
         {
+            //TODO: Impelement defaultValue
             return _client.Evaluate(flagName).IsOn();
+        }
+
+        public int Evaluate(string flagName, int defaultValue)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Evaluate(string flagName, string defaultValue)
+        {
+            throw new NotImplementedException();
         }
     }
 }

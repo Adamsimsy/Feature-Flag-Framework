@@ -18,7 +18,7 @@ namespace FeatureFlagFramework
                 var FeatureflowClient = FeatureFlowFrameworkClient.Instance;
                 var LaunchDarklyClient = LaunchDarklyFrameworkClient.Instance;
 
-                if (LaunchDarklyClient.Evaluate("toggle-feature-service"))
+                if (LaunchDarklyClient.Evaluate("toggle-feature-service", false))
                 {
                     client = LaunchDarklyClient;
                 }
