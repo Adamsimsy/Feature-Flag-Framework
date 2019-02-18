@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework", "FeatureFlagFramework\FeatureFlagFramework.csproj", "{92548D98-BBD1-499E-A87E-C2965CA42B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Example", "FeatureFlagFramework.Example\FeatureFlagFramework.Example.csproj", "{093DEB64-0DA7-4751-AF43-08529BFDC3FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92548D98-BBD1-499E-A87E-C2965CA42B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92548D98-BBD1-499E-A87E-C2965CA42B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92548D98-BBD1-499E-A87E-C2965CA42B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92548D98-BBD1-499E-A87E-C2965CA42B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{093DEB64-0DA7-4751-AF43-08529BFDC3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093DEB64-0DA7-4751-AF43-08529BFDC3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093DEB64-0DA7-4751-AF43-08529BFDC3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093DEB64-0DA7-4751-AF43-08529BFDC3FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1FED224-EDD3-47E5-9248-EF95273FB26C}
+	EndGlobalSection
+EndGlobal
