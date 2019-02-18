@@ -13,21 +13,9 @@ namespace FeatureFlagFramework.Example
     {
         static void Main(string[] args)
         {
-            IFeatureFlagClient client;
-
-            IFeatureFlagClient FeatureflowClient = FeatureFlowFrameworkClient.Instance;
-            IFeatureFlagClient LaunchDarklyClient = LaunchDarklyFrameworkClient.Instance;
-
             while (true)
             {
-                if (LaunchDarklyClient.Evaluate("toggle-feature-flow-service"))
-                {
-                    client = LaunchDarklyClient;                    
-                }
-                else
-                {
-                    client = FeatureflowClient;
-                }
+                IFeatureFlagClient client = FeatureFlagFramework.Client.Instance;
 
                 if (client.Evaluate("api-633-optimized-matches-endpoint"))
                 {
