@@ -15,7 +15,7 @@ namespace FeatureFlagFramework.Example
         {
             IFeatureFlagClient client;
 
-            IFeatureFlagClient FeatureflowClient = new FeatureFlowFrameworkClient(ConfigurationManager.AppSettings["FeatureFlagFramework.FeatureFlow"]);
+            IFeatureFlagClient FeatureflowClient = FeatureFlowFrameworkClient.Instance;
             IFeatureFlagClient LaunchDarklyClient = LaunchDarklyFrameworkClient.Instance;
 
             while (true)
