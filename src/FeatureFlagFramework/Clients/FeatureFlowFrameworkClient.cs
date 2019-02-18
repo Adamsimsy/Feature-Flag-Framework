@@ -7,16 +7,16 @@ namespace FeatureFlagFramework.Clients
 {
     public class FeatureFlowFrameworkClient : IFeatureFlagClient
     {
-        private FeatureflowClient client;
+        private IFeatureflowClient _client;
 
         public FeatureFlowFrameworkClient(string clientKey)
         {
-            client = new FeatureflowClient(clientKey);
+            _client = FeatureflowClientFactory.Create(clientKey);
         }
 
         public bool Evaluate(string flagName)
         {
-            return client.Evaluate(flagName).IsOn();
+            return _client.Evaluate(flagName).IsOn();
         }
     }
 }

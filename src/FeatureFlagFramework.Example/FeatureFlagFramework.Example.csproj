@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FeatureFlagFramework\FeatureFlagFramework.csproj">
-      <Project>{92548d98-bbd1-499e-a87e-c2965ca42b8b}</Project>
+      <Project>{c5ecc4c4-ae12-47c9-88ee-6d763f4fbbf6}</Project>
       <Name>FeatureFlagFramework</Name>
     </ProjectReference>
   </ItemGroup>
