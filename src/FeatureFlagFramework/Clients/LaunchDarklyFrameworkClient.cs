@@ -1,24 +1,24 @@
 ﻿using LaunchDarkly.Client;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
 
 namespace FeatureFlagFramework.Clients
 {
-    public class LaunchDarklyFrameworkClient : IFeatureFlagClient
+    public sealed class LaunchDarklyFrameworkClient : IFeatureFlagClient
     {
-        private LdClient client;
+        private static readonly Lazy<LdClient> lazyClient = new Lazy<LdClient>(() => new LdClient(ConfigurationManager.AppSettings["FeatureFlagFramework.LaunchDarkly"]));
 
-        public LaunchDarklyFrameworkClient(string clientKey)
-        {
-            Configuration ldConfig = LaunchDarkly.Client.Configuration.Default(clientKey);
+        public static LdClient _client { get { return lazyClient.Value; } }
 
-            client = new LdClient(ldConfig);
-        }
+        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new LaunchDarklyFrameworkClient());
+
+        public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
 
         public bool Evaluate(string flagName)
         {
-            return client.BoolVariation(flagName, CreateUser(), false);
+            return _client.BoolVariation(flagName, CreateUser(), false);
         }
 
         static internal User CreateUser()
@@ -30,3 +30,5 @@ namespace FeatureFlagFramework.Clients
         }
     }
 }
+
+
