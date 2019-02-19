@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FeatureFlagFramework
 {
-    public static class Client
+    public static class ClientFactory
     {
         public static IFeatureFlagClient Instance
         {

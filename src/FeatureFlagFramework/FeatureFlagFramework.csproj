@@ -72,7 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="ClientFactory.cs" />
     <Compile Include="Clients\FeatureFlowFrameworkClient.cs" />
     <Compile Include="Clients\LaunchDarklyFrameworkClient.cs" />
     <Compile Include="IFeatureFlagClient.cs" />

@@ -15,7 +15,7 @@ namespace FeatureFlagFramework.Example
         {
             while (true)
             {
-                IFeatureFlagClient client = FeatureFlagFramework.Client.Instance;
+                IFeatureFlagClient client = FeatureFlagFramework.ClientFactory.Instance;
 
                 if (client.Evaluate("example-feature-flag", false))
                 {
