@@ -34,6 +34,17 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: NuGetCommand@2
+  displayName: 'NuGet pack'
   inputs:
     command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
+
+steps:
+- task: NuGetCommand@2
+  displayName: 'NuGet push'
+  inputs:
+    command: push
+    nuGetFeedType: external
+    publishFeedCredentials: 'azureSubscription'
+    versioningScheme: byEnvVar
+    versionEnvVar: <VersionVariableName>
