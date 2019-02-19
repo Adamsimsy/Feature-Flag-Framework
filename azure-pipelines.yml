@@ -39,7 +39,6 @@ steps:
     command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
 
-steps:
 - task: NuGetCommand@2
   displayName: 'NuGet push'
   inputs:
