@@ -1,4 +1,5 @@
-﻿using Featureflow.Client;
+﻿using FeatureFlagFramework.Helpers;
+using Featureflow.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,7 +9,7 @@ namespace FeatureFlagFramework.Clients
 {
     public class FeatureFlowFrameworkClient : IFeatureFlagClient
     {
-        private static readonly Lazy<IFeatureflowClient> lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(ConfigurationManager.AppSettings["FeatureFlagFramework.FeatureFlow"]));
+        private static readonly Lazy<IFeatureflowClient> lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(ClientHelper.GetClientKey("FeatureFlagFramework.FeatureFlow")));
 
         public static IFeatureflowClient _client { get { return lazyClient.Value; } }
 

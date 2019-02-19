@@ -75,6 +75,7 @@
     <Compile Include="ClientFactory.cs" />
     <Compile Include="Clients\FeatureFlowFrameworkClient.cs" />
     <Compile Include="Clients\LaunchDarklyFrameworkClient.cs" />
+    <Compile Include="Helpers\ClientHelper.cs" />
     <Compile Include="IFeatureFlagClient.cs" />
     <Compile Include="IFeatureFlowService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using LaunchDarkly.Client;
+﻿using FeatureFlagFramework.Helpers;
+using LaunchDarkly.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,7 +9,7 @@ namespace FeatureFlagFramework.Clients
 {
     public sealed class LaunchDarklyFrameworkClient : IFeatureFlagClient
     {
-        private static readonly Lazy<LdClient> lazyClient = new Lazy<LdClient>(() => new LdClient(ConfigurationManager.AppSettings["FeatureFlagFramework.LaunchDarkly"]));
+        private static readonly Lazy<LdClient> lazyClient = new Lazy<LdClient>(() => new LdClient(ClientHelper.GetClientKey("FeatureFlagFramework.LaunchDarkly")));
 
         public static LdClient _client { get { return lazyClient.Value; } }
 
