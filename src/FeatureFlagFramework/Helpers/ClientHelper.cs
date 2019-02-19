@@ -17,6 +17,10 @@ namespace FeatureFlagFramework.Helpers
             {
                 throw new System.ArgumentException("appSettings with key '" + settingName + "' not configured or empty.");
             }
+            else if(value.Equals("CLIENT_KEY_HERE"))
+            {
+                throw new System.ArgumentException("appSettings with key '" + settingName + "' is still set to default 'CLIENT_KEY_HERE'.");
+            }
 
             return value;
         }

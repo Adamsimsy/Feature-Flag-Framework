@@ -9,7 +9,7 @@ namespace FeatureFlagFramework.Clients
 {
     public class FeatureFlowFrameworkClient : IFeatureFlagClient
     {
-        private static readonly Lazy<IFeatureflowClient> lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(ClientHelper.GetClientKey("FeatureFlagFramework.FeatureFlow")));
+        private static readonly Lazy<IFeatureflowClient> lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(ClientHelper.GetClientKey("FeatureFlagFramework.ClientKey.FeatureFlow")));
 
         public static IFeatureflowClient _client { get { return lazyClient.Value; } }
 
