@@ -25,7 +25,7 @@ namespace FeatureFlagFramework.Example
                 {
                     Console.WriteLine(client.GetType().ToString() + " False");
                 }
-                Thread.Sleep(1000);
+                Thread.Sleep(1001);
             }
         }
     }
