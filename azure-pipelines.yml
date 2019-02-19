@@ -13,6 +13,9 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  Major: '1'
+  Minor: '0'
+  Patch: '1'
 
 steps:
 - task: NuGetToolInstaller@0
@@ -38,6 +41,10 @@ steps:
   inputs:
     command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
+    versioningScheme: byPrereleaseNumber
+    majorVersion: '$(Major)'
+    minorVersion: '$(Minor)'
+    patchVersion: '$(Patch)'
 
 - task: NuGetCommand@2
   displayName: 'NuGet push'
