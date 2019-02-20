@@ -56,4 +56,4 @@ steps:
     publishFeedCredentials: 'www.nuget.org'
     versioningScheme: byEnvVar
     versionEnvVar: <VersionVariableName>
-    enabled: false
+    continueOnError: 'true'
