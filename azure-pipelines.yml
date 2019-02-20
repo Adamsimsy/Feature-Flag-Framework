@@ -41,7 +41,7 @@ steps:
   inputs:
     command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
-    versioningScheme: byPrereleaseNumber
+    versioningScheme: ByEnvVar
     majorVersion: '$(Major)'
     minorVersion: '$(Minor)'
     patchVersion: '$(Patch)'
@@ -54,3 +54,4 @@ steps:
     publishFeedCredentials: 'www.nuget.org'
     versioningScheme: byEnvVar
     versionEnvVar: <VersionVariableName>
+    enabled: false
