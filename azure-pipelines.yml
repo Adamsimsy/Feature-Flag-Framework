@@ -42,10 +42,10 @@ steps:
   inputs:
     command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
-    versioningScheme: 'byPrereleaseNumber'
-    majorVersion: '$(Major)'
-    minorVersion: '$(Minor)'
-    patchVersion: '$(Patch)'
+    versioningScheme: 'byBuildNumber'
+    #majorVersion: '$(Major)'
+    #minorVersion: '$(Minor)'
+    #patchVersion: '$(Patch)'
     verbosityPack: 'Detailed'
 
 - task: NuGetCommand@2
