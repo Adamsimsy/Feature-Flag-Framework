@@ -41,7 +41,8 @@ steps:
   inputs:
     command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
-    versioningScheme: byBuildNumber
+    versioningScheme: byEnvVar
+    versionEnvVar: '1.0.2'
     majorVersion: '$(Major)'
     minorVersion: '$(Minor)'
     patchVersion: '$(Patch)'
