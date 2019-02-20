@@ -43,7 +43,7 @@ steps:
     command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
     versioningScheme: byEnvVar
-    versionEnvVar: 'NugetVersion'
+    versionEnvVar: '$(NugetVersion)'
     majorVersion: '$(Major)'
     minorVersion: '$(Minor)'
     patchVersion: '$(Patch)'
