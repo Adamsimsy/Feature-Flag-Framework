@@ -42,7 +42,7 @@ steps:
   inputs:
     command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
-    versioningScheme: 'byBuildNumber'
+    versioningScheme: 'off'
     #majorVersion: '$(Major)'
     #minorVersion: '$(Minor)'
     #patchVersion: '$(Patch)'
