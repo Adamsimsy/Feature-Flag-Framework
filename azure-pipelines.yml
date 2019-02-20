@@ -40,8 +40,7 @@ steps:
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
   inputs:
-    command: custom
-    arguments: 'pack -Version 1.0.2'
+    command: pack
     packagesToPack: '**/FeatureFlagFramework.csproj'
     versioningScheme: 'byPrereleaseNumber'
     majorVersion: '$(Major)'
