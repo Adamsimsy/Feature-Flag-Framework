@@ -5,10 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+
+//Nuget setting info https://docs.microsoft.com/en-us/nuget/reference/nuspec#Replacement_Tokens
+
 [assembly: AssemblyTitle("FeatureFlagFramework")]
 [assembly: AssemblyDescription("A C# Library that allows you to quickly pivot between Feature Flag Services such as LaunchDarkly and Featureflow")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("adamsimsy")]
 [assembly: AssemblyProduct("FeatureFlagFramework")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
@@ -32,5 +35,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyVersion("1.0.3.0")]
+[assembly: AssemblyFileVersion("1.0.3.0")]
