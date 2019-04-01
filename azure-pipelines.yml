@@ -58,6 +58,7 @@ steps:
     #minorVersion: '$(Minor)'
     #patchVersion: '$(Patch)'
     verbosityPack: 'Detailed'
+    includeReferencedProjects: true
 
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
