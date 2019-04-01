@@ -1,11 +1,12 @@
-﻿using FeatureFlagFramework.Helpers;
+﻿using FeatureFlagFramework.Core;
+using FeatureFlagFramework.Core.Helpers;
 using Featureflow.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Text;
 
-namespace FeatureFlagFramework.Clients
+namespace FeatureFlagFramework.Clients.Featureflow
 {
     public class FeatureFlowFrameworkClient : IFeatureFlagClient
     {

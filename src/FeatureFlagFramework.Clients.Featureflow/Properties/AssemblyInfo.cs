@@ -5,14 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-
-//Nuget setting info https://docs.microsoft.com/en-us/nuget/reference/nuspec#Replacement_Tokens
-
-[assembly: AssemblyTitle("FeatureFlagFramework")]
-[assembly: AssemblyDescription("A C# Library that allows you to quickly pivot between Feature Flag Services such as LaunchDarkly and Featureflow.")]
+[assembly: AssemblyTitle("FeatureFlagFramework.Clients.Featureflow")]
+[assembly: AssemblyDescription("Featureflow implementation of FeatureFlagFramework generic interface.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("adamsimsy")]
-[assembly: AssemblyProduct("FeatureFlagFramework")]
+[assembly: AssemblyProduct("FeatureFlagFramework.Clients.Featureflow")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -23,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c5ecc4c4-ae12-47c9-88ee-6d763f4fbbf6")]
+[assembly: Guid("829f8b4b-fea0-4a2a-87dc-bf27d32231b3")]
 
 // Version information for an assembly consists of the following four values:
 //

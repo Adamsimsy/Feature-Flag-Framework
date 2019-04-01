@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C5ECC4C4-AE12-47C9-88EE-6D763F4FBBF6}</ProjectGuid>
+    <ProjectGuid>{95971BF4-8324-40C4-890E-27367970E435}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FeatureFlagFramework</RootNamespace>
-    <AssemblyName>FeatureFlagFramework</AssemblyName>
+    <RootNamespace>FeatureFlagFramework.Clients.LaunchDarkly</RootNamespace>
+    <AssemblyName>FeatureFlagFramework.Clients.LaunchDarkly</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,17 +33,26 @@
   <ItemGroup>
     <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="LaunchDarkly.Cache, Version=1.0.2.0, Culture=neutral, PublicKeyToken=caeed01e3c7cd028, processorArchitecture=MSIL">
+      <HintPath>..\packages\LaunchDarkly.Cache.1.0.2\lib\net45\LaunchDarkly.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="LaunchDarkly.Client, Version=5.6.1.0, Culture=neutral, PublicKeyToken=f86add69004e6885, processorArchitecture=MSIL">
+      <HintPath>..\packages\LaunchDarkly.Client.5.6.1\lib\net45\LaunchDarkly.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="LaunchDarkly.Common.StrongName, Version=1.2.3.0, Culture=neutral, PublicKeyToken=45ef1738a929a7df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LaunchDarkly.Common.StrongName.1.2.3\lib\net45\LaunchDarkly.Common.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="LaunchDarkly.EventSource, Version=3.2.3.0, Culture=neutral, PublicKeyToken=18e8c36453e3060f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LaunchDarkly.EventSource.3.2.3\lib\net45\LaunchDarkly.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,7 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientFactory.cs" />
+    <Compile Include="LaunchDarklyFrameworkClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,14 +70,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FeatureFlagFramework.Clients.Featureflow\FeatureFlagFramework.Clients.Featureflow.csproj">
-      <Project>{829f8b4b-fea0-4a2a-87dc-bf27d32231b3}</Project>
-      <Name>FeatureFlagFramework.Clients.Featureflow</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FeatureFlagFramework.Clients.LaunchDarkly\FeatureFlagFramework.Clients.LaunchDarkly.csproj">
-      <Project>{95971bf4-8324-40c4-890e-27367970e435}</Project>
-      <Name>FeatureFlagFramework.Clients.LaunchDarkly</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FeatureFlagFramework.Core\FeatureFlagFramework.Core.csproj">
       <Project>{b4719ac7-38aa-40d3-8126-ff49ab6f0c71}</Project>
       <Name>FeatureFlagFramework.Core</Name>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeatureFlagFramework.Helpers
+namespace FeatureFlagFramework.Core.Helpers
 {
     public static class ClientHelper
     {

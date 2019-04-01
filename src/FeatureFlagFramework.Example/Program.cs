@@ -1,11 +1,11 @@
-﻿using FeatureFlagFramework.Clients;
-using System;
+﻿using System;
 using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using FeatureFlagFramework.Core;
 
 namespace FeatureFlagFramework.Example
 {
@@ -25,7 +25,7 @@ namespace FeatureFlagFramework.Example
                 {
                     Console.WriteLine(client.GetType().ToString() + " False");
                 }
-                Thread.Sleep(1001);
+                Thread.Sleep(100);
             }
         }
     }

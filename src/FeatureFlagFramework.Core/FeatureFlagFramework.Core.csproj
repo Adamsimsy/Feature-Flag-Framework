@@ -2,21 +2,18 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{093DEB64-0DA7-4751-AF43-08529BFDC3FE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>FeatureFlagFramework.Example</RootNamespace>
-    <AssemblyName>FeatureFlagFramework.Example</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <ProjectGuid>{B4719AC7-38AA-40D3-8126-FF49AB6F0C71}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FeatureFlagFramework.Core</RootNamespace>
+    <AssemblyName>FeatureFlagFramework.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -46,29 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Helpers\ClientHelper.cs" />
+    <Compile Include="IFeatureFlagClient.cs" />
+    <Compile Include="IFeatureFlowService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FeatureFlagFramework.Clients.Featureflow\FeatureFlagFramework.Clients.Featureflow.csproj">
-      <Project>{829f8b4b-fea0-4a2a-87dc-bf27d32231b3}</Project>
-      <Name>FeatureFlagFramework.Clients.Featureflow</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FeatureFlagFramework.Clients.LaunchDarkly\FeatureFlagFramework.Clients.LaunchDarkly.csproj">
-      <Project>{95971bf4-8324-40c4-890e-27367970e435}</Project>
-      <Name>FeatureFlagFramework.Clients.LaunchDarkly</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FeatureFlagFramework.Core\FeatureFlagFramework.Core.csproj">
-      <Project>{b4719ac7-38aa-40d3-8126-ff49ab6f0c71}</Project>
-      <Name>FeatureFlagFramework.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FeatureFlagFramework\FeatureFlagFramework.csproj">
-      <Project>{c5ecc4c4-ae12-47c9-88ee-6d763f4fbbf6}</Project>
-      <Name>FeatureFlagFramework</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
