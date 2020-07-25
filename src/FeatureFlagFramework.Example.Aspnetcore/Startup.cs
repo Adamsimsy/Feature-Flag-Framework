@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FeatureFlagFramework.Clients.LaunchDarkly;
+using FeatureFlagFramework.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +25,11 @@ namespace FeatureFlagFramework.Example.Aspnetcore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddSingleton<IFeatureFlagClient>(c => new LaunchDarklyFrameworkClient(new ClientSettings()
+            {
+                ClientKey = "sdk-410915f0-e6f4-4b2b-ae66-e7837ea6c07d"
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

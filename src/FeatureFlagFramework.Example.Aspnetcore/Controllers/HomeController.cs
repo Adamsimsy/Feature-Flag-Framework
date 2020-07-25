@@ -6,20 +6,28 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FeatureFlagFramework.Example.Aspnetcore.Models;
+using FeatureFlagFramework.Core;
 
 namespace FeatureFlagFramework.Example.Aspnetcore.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IFeatureFlagClient featureFlagClient;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IFeatureFlagClient featureFlagClient)
         {
             _logger = logger;
+            this.featureFlagClient = featureFlagClient;
         }
 
         public IActionResult Index()
         {
+            if(featureFlagClient.Evaluate("example-feature-flag", false))
+            {
+                ViewData["Flag"] = "Enabled";
+            }
+
             return View();
         }
 
