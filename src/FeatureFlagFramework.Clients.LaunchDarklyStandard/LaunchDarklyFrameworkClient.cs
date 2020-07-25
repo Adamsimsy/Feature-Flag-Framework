@@ -13,7 +13,7 @@ namespace FeatureFlagFramework.Clients.LaunchDarkly
 
         public LdClient _client { get { return lazyClient.Value; } }
 
-        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new LaunchDarklyFrameworkClient(new DefaultSettings("FeatureFlagFramework.Clients.LaunchDarkly")));
+        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new LaunchDarklyFrameworkClient(new DefaultSettings(Constants.ClientKeyName)));
 
         public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
 

@@ -18,7 +18,7 @@ namespace FeatureFlagFramework.Example.Aspnetcore.Controllers
         public HomeController(ILogger<HomeController> logger, IFeatureFlagClient featureFlagClient)
         {
             _logger = logger;
-            this.featureFlagClient = featureFlagClient;
+            this.featureFlagClient = FeatureFlagFramework.ClientFactory.Instance;
         }
 
         public IActionResult Index()

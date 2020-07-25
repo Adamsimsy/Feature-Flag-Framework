@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FeatureFlagFramework.Clients.LaunchDarkly;
 using FeatureFlagFramework.Core;
+using FeatureFlagFramework.Core.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -35,6 +36,8 @@ namespace FeatureFlagFramework.Example.Aspnetcore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            ClientHelper.SetClientKeyAndValue(Constants.ClientKeyName, Configuration.GetValue<string>("AppSettings:FeatureFlagFramework.Clients.LaunchDarkly"));
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
