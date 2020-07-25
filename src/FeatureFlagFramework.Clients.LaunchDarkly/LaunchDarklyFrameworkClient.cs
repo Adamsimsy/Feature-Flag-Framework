@@ -10,13 +10,21 @@ namespace FeatureFlagFramework.Clients.LaunchDarkly
 {
     public sealed class LaunchDarklyFrameworkClient : IFeatureFlagClient
     {
-        private static readonly Lazy<LdClient> lazyClient = new Lazy<LdClient>(() => new LdClient(ClientHelper.GetClientKey("FeatureFlagFramework.Clients.LaunchDarkly")));
+        private readonly Lazy<LdClient> lazyClient;
 
-        public static LdClient _client { get { return lazyClient.Value; } }
+        public LdClient _client { get { return lazyClient.Value; } }
 
-        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new LaunchDarklyFrameworkClient());
+        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new LaunchDarklyFrameworkClient(new DefaultSettings("FeatureFlagFramework.Clients.LaunchDarkly")));
 
         public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
+
+        private readonly ClientSettings settings;
+
+        public LaunchDarklyFrameworkClient(ClientSettings settings)
+        {
+            this.settings = settings;
+            this.lazyClient = new Lazy<LdClient>(() => new LdClient(settings.ClientKey));
+        }
 
         public bool Evaluate(string flagName, bool defaultValue)
         {

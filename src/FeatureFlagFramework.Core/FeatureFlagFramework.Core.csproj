@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientSettings.cs" />
+    <Compile Include="DefaultSettings.cs" />
     <Compile Include="Helpers\ClientHelper.cs" />
     <Compile Include="IFeatureFlagClient.cs" />
     <Compile Include="IFeatureFlowService.cs" />

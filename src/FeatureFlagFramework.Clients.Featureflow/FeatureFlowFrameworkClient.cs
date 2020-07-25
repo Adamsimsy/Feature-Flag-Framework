@@ -10,13 +10,21 @@ namespace FeatureFlagFramework.Clients.Featureflow
 {
     public class FeatureFlowFrameworkClient : IFeatureFlagClient
     {
-        private static readonly Lazy<IFeatureflowClient> lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(ClientHelper.GetClientKey("FeatureFlagFramework.Clients.Featureflow")));
+        private readonly Lazy<IFeatureflowClient> lazyClient;
 
-        public static IFeatureflowClient _client { get { return lazyClient.Value; } }
+        public IFeatureflowClient _client { get { return lazyClient.Value; } }
 
-        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new FeatureFlowFrameworkClient());
+        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new FeatureFlowFrameworkClient(new DefaultSettings("FeatureFlagFramework.Clients.Featureflow")));
 
         public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
+
+        private readonly ClientSettings settings;
+
+        public FeatureFlowFrameworkClient(ClientSettings settings)
+        {
+            this.settings = settings;
+            this.lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(settings.ClientKey));
+        }
 
         public bool Evaluate(string flagName, bool defaultValue)
         {
