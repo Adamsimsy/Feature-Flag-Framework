@@ -7,26 +7,34 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FeatureFlagFramework.Example.Aspnetcore.Models;
 using FeatureFlagFramework.Core;
+using FeatureFlagFramework.Clients.LaunchDarkly;
 
 namespace FeatureFlagFramework.Example.Aspnetcore.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IFeatureFlagClient featureFlagClient;
+        private readonly IFeatureFlagClient featureFlagClientDependencyInjection;
+        private readonly IFeatureFlagClient featureFlagClientServiceLocator;
 
         public HomeController(ILogger<HomeController> logger, IFeatureFlagClient featureFlagClient)
         {
             _logger = logger;
-            this.featureFlagClient = FeatureFlagFramework.ClientFactory.Instance;
+
+            //FeatureFlagFramework - Dependency Injection Client Retrieval
+            this.featureFlagClientDependencyInjection = featureFlagClient;
+
+            //FeatureFlagFramework - Service Locator Client Retrieval
+            this.featureFlagClientServiceLocator = LaunchDarklyFrameworkClient.Instance;
         }
 
         public IActionResult Index()
         {
-            if(featureFlagClient.Evaluate("example-feature-flag", false))
-            {
-                ViewData["Flag"] = "Enabled";
-            }
+            //FeatureFlagFramework - Dependency Injection Flag Evaluation
+            ViewData["Flag-DI"] = this.featureFlagClientDependencyInjection.Evaluate("example-feature-flag", false);
+
+            //FeatureFlagFramework - Service Locator Client Flag Evaluation
+            ViewData["Flag-SL"] = this.featureFlagClientServiceLocator.Evaluate("example-feature-flag", false);
 
             return View();
         }

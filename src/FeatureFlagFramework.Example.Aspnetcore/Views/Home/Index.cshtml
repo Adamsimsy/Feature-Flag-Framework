@@ -5,8 +5,5 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    @if ((string)ViewData["Flag"] == "Enabled")
-    {
-        <p>Flag enabled!</p>
-    }
+    <p>Flag <strong>'example-feature-flag'</strong> set to <strong>'@ViewData["Flag-DI"]'</strong> with Dependency Injection and <strong>'@ViewData["Flag-SL"]'</strong> with Service Locator.</p>
 </div>

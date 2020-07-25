@@ -26,17 +26,21 @@ namespace FeatureFlagFramework.Example.Aspnetcore
         {
             services.AddControllersWithViews();
 
+            var clientKey = Configuration.GetValue<string>(Constants.ClientKeyName);
+
+            //FeatureFlagFramework - Dependency Injection Configuration
             services.AddSingleton<IFeatureFlagClient>(c => new LaunchDarklyFrameworkClient(new FeatureFlagClientSettings()
             {
-                ClientKey = "sdk-410915f0-e6f4-4b2b-ae66-e7837ea6c07d"
+                ClientKey = clientKey
             }));
+
+            //FeatureFlagFramework - Service Locator Configuration
+            FeatureFlagClientDefaultSettings.SetClientKey(Constants.ClientKeyName, clientKey);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            FeatureFlagClientDefaultSettings.SetClientKey(Constants.ClientKeyName, Configuration.GetValue<string>(Constants.ClientKeyName));
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

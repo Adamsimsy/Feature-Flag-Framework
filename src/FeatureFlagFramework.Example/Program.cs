@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using FeatureFlagFramework.Core;
+using FeatureFlagFramework.Clients.LaunchDarkly;
 
 namespace FeatureFlagFramework.Example
 {
@@ -13,19 +14,54 @@ namespace FeatureFlagFramework.Example
     {
         static void Main(string[] args)
         {
+            var clientKey = ConfigurationManager.AppSettings[FeatureFlagFramework.Clients.LaunchDarkly.Constants.ClientKeyName];
+
+            //FeatureFlagFramework - Instantiation with Custom Configuration used with Dependency Injection library of your choice
+            IFeatureFlagClient featureFlagClientDependencyInjection = new LaunchDarklyFrameworkClient(new FeatureFlagClientSettings()
+            {
+                ClientKey = clientKey
+            });
+
+            //FeatureFlagFramework - Service Locator
+            IFeatureFlagClient featureFlagClientServiceLocator = LaunchDarklyFrameworkClient.Instance;
+
+            //FeatureFlagFramework - Service Locator Configuration
+            //You don't need to set the key using the below if using the default AppSetting key names
+            //FeatureFlagClientDefaultSettings.SetClientKey(Constants.ClientKeyName, clientKey);
+
+            //FeatureFlagFramework - Factory to toggle between clients (e.g. between LaunchDarkly and FeatureFlow whilst evaluating clients)
+            IFeatureFlagClient featureFlagClientFactory = FeatureFlagFramework.ClientFactory.Instance;
+
             while (true)
             {
-                IFeatureFlagClient client = FeatureFlagFramework.ClientFactory.Instance;
-
-                if (client.Evaluate("example-feature-flag", false))
+                if (featureFlagClientDependencyInjection.Evaluate("example-feature-flag", false))
                 {
-                    Console.WriteLine(client.GetType().ToString() + " True");
+                    Console.WriteLine(featureFlagClientDependencyInjection.GetType().ToString() + " with Instantiation True");
                 }
                 else
                 {
-                    Console.WriteLine(client.GetType().ToString() + " False");
+                    Console.WriteLine(featureFlagClientDependencyInjection.GetType().ToString() + " with Instantiation False");
                 }
-                Thread.Sleep(100);
+
+                if (featureFlagClientServiceLocator.Evaluate("example-feature-flag", false))
+                {
+                    Console.WriteLine(featureFlagClientServiceLocator.GetType().ToString() + " with Service Locator True");
+                }
+                else
+                {
+                    Console.WriteLine(featureFlagClientServiceLocator.GetType().ToString() + " with Service Locator False");
+                }
+
+                if (featureFlagClientFactory.Evaluate("example-feature-flag", false))
+                {
+                    Console.WriteLine(featureFlagClientFactory.GetType().ToString() + " with Flagging Factory True");
+                }
+                else
+                {
+                    Console.WriteLine(featureFlagClientFactory.GetType().ToString() + " with Flagging Factory False");
+                }
+
+                Thread.Sleep(500);
             }
         }
     }
