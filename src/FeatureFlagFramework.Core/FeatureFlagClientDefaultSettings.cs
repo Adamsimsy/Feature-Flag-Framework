@@ -13,6 +13,20 @@ namespace FeatureFlagFramework.Core
         {
             var value = ConfigurationManager.AppSettings[clientKeyName];
 
+            ValidateValue(clientKeyName, value);
+
+            this.ClientKey = value;
+        }
+
+        public static void SetClientKey(string clientKeyName, string value)
+        {
+            ValidateValue(clientKeyName, value);
+
+            ConfigurationManager.AppSettings.Set(clientKeyName, value);
+        }
+
+        internal static string ValidateValue(string clientKeyName, string value)
+        {
             if (value == null || string.IsNullOrWhiteSpace(value))
             {
                 throw new System.ArgumentException("appSettings with key '" + clientKeyName + "' not configured or empty.");
@@ -21,13 +35,7 @@ namespace FeatureFlagFramework.Core
             {
                 throw new System.ArgumentException("appSettings with key '" + clientKeyName + "' is still set to default 'CLIENT_KEY_HERE'.");
             }
-
-            this.ClientKey = value;
-        }
-
-        public static void SetClientKey(string key, string value)
-        {
-            ConfigurationManager.AppSettings.Set(key, value);
+            return value;
         }
     }
 }

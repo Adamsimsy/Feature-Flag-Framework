@@ -8,6 +8,19 @@ namespace FeatureFlagFramework.Core
 {
     public class FeatureFlagClientSettings
     {
-        public string ClientKey { get; set; }
+        private string clientKey;
+
+        public string ClientKey {
+            get
+            {
+                return clientKey;
+            }
+            set
+            {
+                FeatureFlagClientDefaultSettings.ValidateValue("Set by FeatureFlagClientSettings", value);
+
+                clientKey = value;
+            }
+        }
     }
 }
