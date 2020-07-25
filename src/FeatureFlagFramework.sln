@@ -5,15 +5,7 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Example", "FeatureFlagFramework.Example\FeatureFlagFramework.Example.csproj", "{093DEB64-0DA7-4751-AF43-08529BFDC3FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework", "FeatureFlagFramework\FeatureFlagFramework.csproj", "{C5ECC4C4-AE12-47C9-88EE-6D763F4FBBF6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Tests", "FeatureFlagFramework.Tests\FeatureFlagFramework.Tests.csproj", "{941DCBCD-A7C7-4DE2-AC56-10EA84A5CB50}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Clients.LaunchDarkly", "FeatureFlagFramework.Clients.LaunchDarkly\FeatureFlagFramework.Clients.LaunchDarkly.csproj", "{95971BF4-8324-40C4-890E-27367970E435}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Clients.Featureflow", "FeatureFlagFramework.Clients.Featureflow\FeatureFlagFramework.Clients.Featureflow.csproj", "{829F8B4B-FEA0-4A2A-87DC-BF27D32231B3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Core", "FeatureFlagFramework.Core\FeatureFlagFramework.Core.csproj", "{B4719AC7-38AA-40D3-8126-FF49AB6F0C71}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Example.Aspnetcore", "FeatureFlagFramework.Example.Aspnetcore\FeatureFlagFramework.Example.Aspnetcore.csproj", "{C2AB2778-FF41-4905-AE1D-E1987EFAFB75}"
 EndProject
@@ -21,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Client
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.CoreStandard", "FeatureFlagFramework.CoreStandard\FeatureFlagFramework.CoreStandard.csproj", "{C7D098DD-CE2D-4F4F-983D-DADDA3A15133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFrameworkStandard", "FeatureFlagFrameworkStandard\FeatureFlagFrameworkStandard.csproj", "{2DAA2D23-5152-4F77-82CB-23CF1EDADB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFrameworkStandard", "FeatureFlagFrameworkStandard\FeatureFlagFrameworkStandard.csproj", "{2DAA2D23-5152-4F77-82CB-23CF1EDADB17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Clients.FeatureflowStandard", "FeatureFlagFramework.Clients.FeatureflowStandard\FeatureFlagFramework.Clients.FeatureflowStandard.csproj", "{6278957B-FAA3-4468-8ED2-8B809DF9EAD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Clients.FeatureflowStandard", "FeatureFlagFramework.Clients.FeatureflowStandard\FeatureFlagFramework.Clients.FeatureflowStandard.csproj", "{6278957B-FAA3-4468-8ED2-8B809DF9EAD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,26 +27,10 @@ Global
 		{093DEB64-0DA7-4751-AF43-08529BFDC3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{093DEB64-0DA7-4751-AF43-08529BFDC3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{093DEB64-0DA7-4751-AF43-08529BFDC3FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5ECC4C4-AE12-47C9-88EE-6D763F4FBBF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5ECC4C4-AE12-47C9-88EE-6D763F4FBBF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5ECC4C4-AE12-47C9-88EE-6D763F4FBBF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5ECC4C4-AE12-47C9-88EE-6D763F4FBBF6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{941DCBCD-A7C7-4DE2-AC56-10EA84A5CB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{941DCBCD-A7C7-4DE2-AC56-10EA84A5CB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{941DCBCD-A7C7-4DE2-AC56-10EA84A5CB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{941DCBCD-A7C7-4DE2-AC56-10EA84A5CB50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95971BF4-8324-40C4-890E-27367970E435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95971BF4-8324-40C4-890E-27367970E435}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95971BF4-8324-40C4-890E-27367970E435}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95971BF4-8324-40C4-890E-27367970E435}.Release|Any CPU.Build.0 = Release|Any CPU
-		{829F8B4B-FEA0-4A2A-87DC-BF27D32231B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{829F8B4B-FEA0-4A2A-87DC-BF27D32231B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{829F8B4B-FEA0-4A2A-87DC-BF27D32231B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{829F8B4B-FEA0-4A2A-87DC-BF27D32231B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4719AC7-38AA-40D3-8126-FF49AB6F0C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4719AC7-38AA-40D3-8126-FF49AB6F0C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4719AC7-38AA-40D3-8126-FF49AB6F0C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4719AC7-38AA-40D3-8126-FF49AB6F0C71}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C2AB2778-FF41-4905-AE1D-E1987EFAFB75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C2AB2778-FF41-4905-AE1D-E1987EFAFB75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2AB2778-FF41-4905-AE1D-E1987EFAFB75}.Release|Any CPU.ActiveCfg = Release|Any CPU
