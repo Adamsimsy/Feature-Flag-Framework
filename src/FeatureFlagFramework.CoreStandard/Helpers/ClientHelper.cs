@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace FeatureFlagFramework.Core.Helpers
     {
         public static string GetClientKey(string settingName)
         {
-            var value = "";
+            var value = ConfigurationManager.AppSettings[settingName];
 
             if (value == null || string.IsNullOrWhiteSpace(value))
             {
@@ -22,6 +23,11 @@ namespace FeatureFlagFramework.Core.Helpers
             }
 
             return value;
+        }
+
+        public static void SetClientKeyAndValue(string key, string value)
+        {
+            ConfigurationManager.AppSettings.Set(key, value);
         }
     }
 }
