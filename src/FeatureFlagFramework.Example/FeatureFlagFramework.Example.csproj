@@ -54,19 +54,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FeatureFlagFramework.Clients.Featureflow\FeatureFlagFramework.Clients.Featureflow.csproj">
-      <Project>{829f8b4b-fea0-4a2a-87dc-bf27d32231b3}</Project>
+      <Project>{6278957b-faa3-4468-8ed2-8b809df9ead4}</Project>
       <Name>FeatureFlagFramework.Clients.Featureflow</Name>
     </ProjectReference>
     <ProjectReference Include="..\FeatureFlagFramework.Clients.LaunchDarkly\FeatureFlagFramework.Clients.LaunchDarkly.csproj">
-      <Project>{95971bf4-8324-40c4-890e-27367970e435}</Project>
+      <Project>{cd66e6f1-98e7-4974-9d93-380b4dabbca5}</Project>
       <Name>FeatureFlagFramework.Clients.LaunchDarkly</Name>
     </ProjectReference>
     <ProjectReference Include="..\FeatureFlagFramework.Core\FeatureFlagFramework.Core.csproj">
-      <Project>{b4719ac7-38aa-40d3-8126-ff49ab6f0c71}</Project>
+      <Project>{c7d098dd-ce2d-4f4f-983d-dadda3a15133}</Project>
       <Name>FeatureFlagFramework.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\FeatureFlagFramework\FeatureFlagFramework.csproj">
-      <Project>{c5ecc4c4-ae12-47c9-88ee-6d763f4fbbf6}</Project>
+      <Project>{2daa2d23-5152-4f77-82cb-23cf1edadb17}</Project>
       <Name>FeatureFlagFramework</Name>
     </ProjectReference>
   </ItemGroup>

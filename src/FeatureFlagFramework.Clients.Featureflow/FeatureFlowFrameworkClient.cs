@@ -1,22 +1,28 @@
 ﻿using FeatureFlagFramework.Core;
-using FeatureFlagFramework.Core.Helpers;
 using Featureflow.Client;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Text;
 
 namespace FeatureFlagFramework.Clients.Featureflow
 {
     public class FeatureFlowFrameworkClient : IFeatureFlagClient
     {
-        private static readonly Lazy<IFeatureflowClient> lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(ClientHelper.GetClientKey("FeatureFlagFramework.Clients.Featureflow")));
+        private readonly Lazy<IFeatureflowClient> lazyClient;
 
-        public static IFeatureflowClient _client { get { return lazyClient.Value; } }
+        public IFeatureflowClient _client { get { return lazyClient.Value; } }
 
-        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new FeatureFlowFrameworkClient());
+        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new FeatureFlowFrameworkClient(new FeatureFlagClientDefaultSettings(Constants.ClientKeyName)));
 
         public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
+
+        private readonly FeatureFlagClientSettings settings;
+
+        public FeatureFlowFrameworkClient(FeatureFlagClientSettings settings)
+        {
+            this.settings = settings;
+            this.lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(settings.ClientKey));
+        }
 
         public bool Evaluate(string flagName, bool defaultValue)
         {
