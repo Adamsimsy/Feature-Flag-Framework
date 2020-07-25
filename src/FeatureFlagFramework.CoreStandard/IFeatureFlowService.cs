@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FeatureFlagFramework.CoreStandard
+namespace FeatureFlagFramework.Core
 {
     public interface IFeatureFlowService
     {

@@ -9,13 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Tests"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Example.Aspnetcore", "FeatureFlagFramework.Example.Aspnetcore\FeatureFlagFramework.Example.Aspnetcore.csproj", "{C2AB2778-FF41-4905-AE1D-E1987EFAFB75}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Clients.LaunchDarklyStandard", "FeatureFlagFramework.Clients.LaunchDarklyStandard\FeatureFlagFramework.Clients.LaunchDarklyStandard.csproj", "{CD66E6F1-98E7-4974-9D93-380B4DABBCA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Clients.LaunchDarkly", "FeatureFlagFramework.Clients.LaunchDarklyStandard\FeatureFlagFramework.Clients.LaunchDarkly.csproj", "{CD66E6F1-98E7-4974-9D93-380B4DABBCA5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.CoreStandard", "FeatureFlagFramework.CoreStandard\FeatureFlagFramework.CoreStandard.csproj", "{C7D098DD-CE2D-4F4F-983D-DADDA3A15133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Core", "FeatureFlagFramework.CoreStandard\FeatureFlagFramework.Core.csproj", "{C7D098DD-CE2D-4F4F-983D-DADDA3A15133}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFrameworkStandard", "FeatureFlagFrameworkStandard\FeatureFlagFrameworkStandard.csproj", "{2DAA2D23-5152-4F77-82CB-23CF1EDADB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework", "FeatureFlagFrameworkStandard\FeatureFlagFramework.csproj", "{2DAA2D23-5152-4F77-82CB-23CF1EDADB17}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Clients.FeatureflowStandard", "FeatureFlagFramework.Clients.FeatureflowStandard\FeatureFlagFramework.Clients.FeatureflowStandard.csproj", "{6278957B-FAA3-4468-8ED2-8B809DF9EAD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Clients.Featureflow", "FeatureFlagFramework.Clients.FeatureflowStandard\FeatureFlagFramework.Clients.Featureflow.csproj", "{6278957B-FAA3-4468-8ED2-8B809DF9EAD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

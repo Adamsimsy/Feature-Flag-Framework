@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeatureFlagFramework.CoreStandard
+namespace FeatureFlagFramework.Core
 {
     public class ClientSettings
     {

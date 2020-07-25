@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FeatureFlagFramework.Example.Aspnetcore.Models;
-using FeatureFlagFramework.CoreStandard;
+using FeatureFlagFramework.Core;
 
 namespace FeatureFlagFramework.Example.Aspnetcore.Controllers
 {

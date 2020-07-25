@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FeatureFlagFramework.CoreStandard\FeatureFlagFramework.CoreStandard.csproj" />
+    <ProjectReference Include="..\FeatureFlagFramework.CoreStandard\FeatureFlagFramework.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,14 +1,14 @@
 ﻿using FeatureFlagFramework.Clients;
-using FeatureFlagFramework.Clients.FeatureflowStandard;
-using FeatureFlagFramework.Clients.LaunchDarklyStandard;
-using FeatureFlagFramework.CoreStandard;
+using FeatureFlagFramework.Clients.Featureflow;
+using FeatureFlagFramework.Clients.LaunchDarkly;
+using FeatureFlagFramework.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeatureFlagFrameworkStandard
+namespace FeatureFlagFramework
 {
     public static class ClientFactory
     {

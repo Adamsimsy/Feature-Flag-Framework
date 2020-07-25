@@ -1,11 +1,11 @@
-﻿using FeatureFlagFramework.CoreStandard;
-using FeatureFlagFramework.CoreStandard.Helpers;
+﻿using FeatureFlagFramework.Core;
+using FeatureFlagFramework.Core.Helpers;
 using LaunchDarkly.Client;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FeatureFlagFramework.Clients.LaunchDarklyStandard
+namespace FeatureFlagFramework.Clients.LaunchDarkly
 {
     public sealed class LaunchDarklyFrameworkClient : IFeatureFlagClient
     {

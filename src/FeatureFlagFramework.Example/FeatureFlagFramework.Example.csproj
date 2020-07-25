@@ -53,21 +53,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FeatureFlagFramework.Clients.FeatureflowStandard\FeatureFlagFramework.Clients.FeatureflowStandard.csproj">
+    <ProjectReference Include="..\FeatureFlagFramework.Clients.FeatureflowStandard\FeatureFlagFramework.Clients.Featureflow.csproj">
       <Project>{6278957b-faa3-4468-8ed2-8b809df9ead4}</Project>
-      <Name>FeatureFlagFramework.Clients.FeatureflowStandard</Name>
+      <Name>FeatureFlagFramework.Clients.Featureflow</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FeatureFlagFramework.Clients.LaunchDarklyStandard\FeatureFlagFramework.Clients.LaunchDarklyStandard.csproj">
+    <ProjectReference Include="..\FeatureFlagFramework.Clients.LaunchDarklyStandard\FeatureFlagFramework.Clients.LaunchDarkly.csproj">
       <Project>{cd66e6f1-98e7-4974-9d93-380b4dabbca5}</Project>
-      <Name>FeatureFlagFramework.Clients.LaunchDarklyStandard</Name>
+      <Name>FeatureFlagFramework.Clients.LaunchDarkly</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FeatureFlagFramework.CoreStandard\FeatureFlagFramework.CoreStandard.csproj">
+    <ProjectReference Include="..\FeatureFlagFramework.CoreStandard\FeatureFlagFramework.Core.csproj">
       <Project>{c7d098dd-ce2d-4f4f-983d-dadda3a15133}</Project>
-      <Name>FeatureFlagFramework.CoreStandard</Name>
+      <Name>FeatureFlagFramework.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FeatureFlagFrameworkStandard\FeatureFlagFrameworkStandard.csproj">
+    <ProjectReference Include="..\FeatureFlagFrameworkStandard\FeatureFlagFramework.csproj">
       <Project>{2daa2d23-5152-4f77-82cb-23cf1edadb17}</Project>
-      <Name>FeatureFlagFrameworkStandard</Name>
+      <Name>FeatureFlagFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
