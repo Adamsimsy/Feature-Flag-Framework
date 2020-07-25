@@ -25,7 +25,7 @@ namespace FeatureFlagFramework.Core.Helpers
             return value;
         }
 
-        public static void SetClientKeyAndValue(string key, string value)
+        public static void SetClientKey(string key, string value)
         {
             ConfigurationManager.AppSettings.Set(key, value);
         }

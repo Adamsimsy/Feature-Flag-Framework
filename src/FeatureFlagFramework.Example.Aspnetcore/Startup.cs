@@ -36,7 +36,7 @@ namespace FeatureFlagFramework.Example.Aspnetcore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            ClientHelper.SetClientKeyAndValue(Constants.ClientKeyName, Configuration.GetValue<string>("AppSettings:FeatureFlagFramework.Clients.LaunchDarkly"));
+            ClientHelper.SetClientKey(Constants.ClientKeyName, Configuration.GetValue<string>(Constants.ClientKeyName));
 
             if (env.IsDevelopment())
             {
