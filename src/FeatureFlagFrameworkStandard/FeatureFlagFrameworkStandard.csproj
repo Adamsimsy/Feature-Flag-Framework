@@ -1,14 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\FeatureFlagFramework.Clients.FeatureflowStandard\FeatureFlagFramework.Clients.FeatureflowStandard.csproj" />
     <ProjectReference Include="..\FeatureFlagFramework.Clients.LaunchDarklyStandard\FeatureFlagFramework.Clients.LaunchDarklyStandard.csproj" />
     <ProjectReference Include="..\FeatureFlagFramework.CoreStandard\FeatureFlagFramework.CoreStandard.csproj" />
   </ItemGroup>

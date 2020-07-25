@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using FeatureFlagFramework.Core;
+using FeatureFlagFramework.CoreStandard;
 
 namespace FeatureFlagFramework.Example
 {
@@ -15,7 +15,7 @@ namespace FeatureFlagFramework.Example
         {
             while (true)
             {
-                IFeatureFlagClient client = FeatureFlagFramework.ClientFactory.Instance;
+                IFeatureFlagClient client = FeatureFlagFrameworkStandard.ClientFactory.Instance;
 
                 if (client.Evaluate("example-feature-flag", false))
                 {
