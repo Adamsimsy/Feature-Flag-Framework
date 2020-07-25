@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FeatureFlagFramework.Core
 {
-    public class ClientSettings
+    public class FeatureFlagClientSettings
     {
         public string ClientKey { get; set; }
     }

@@ -1,5 +1,4 @@
 ﻿using FeatureFlagFramework.Core;
-using FeatureFlagFramework.Core.Helpers;
 using LaunchDarkly.Client;
 using System;
 using System.Collections.Generic;
@@ -13,13 +12,13 @@ namespace FeatureFlagFramework.Clients.LaunchDarkly
 
         public LdClient _client { get { return lazyClient.Value; } }
 
-        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new LaunchDarklyFrameworkClient(new DefaultSettings(Constants.ClientKeyName)));
+        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new LaunchDarklyFrameworkClient(new FeatureFlagClientDefaultSettings(Constants.ClientKeyName)));
 
         public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
 
-        private readonly ClientSettings settings;
+        private readonly FeatureFlagClientSettings settings;
 
-        public LaunchDarklyFrameworkClient(ClientSettings settings)
+        public LaunchDarklyFrameworkClient(FeatureFlagClientSettings settings)
         {
             this.settings = settings;
             this.lazyClient = new Lazy<LdClient>(() => new LdClient(settings.ClientKey));

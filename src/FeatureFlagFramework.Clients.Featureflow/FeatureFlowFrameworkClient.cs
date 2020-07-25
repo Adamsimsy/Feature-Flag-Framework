@@ -1,5 +1,4 @@
 ﻿using FeatureFlagFramework.Core;
-using FeatureFlagFramework.Core.Helpers;
 using Featureflow.Client;
 using System;
 using System.Collections.Generic;
@@ -13,13 +12,13 @@ namespace FeatureFlagFramework.Clients.Featureflow
 
         public IFeatureflowClient _client { get { return lazyClient.Value; } }
 
-        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new FeatureFlowFrameworkClient(new DefaultSettings(Constants.ClientKeyName)));
+        private static readonly Lazy<IFeatureFlagClient> lazyFeatureFlagClient = new Lazy<IFeatureFlagClient>(() => new FeatureFlowFrameworkClient(new FeatureFlagClientDefaultSettings(Constants.ClientKeyName)));
 
         public static IFeatureFlagClient Instance { get { return lazyFeatureFlagClient.Value; } }
 
-        private readonly ClientSettings settings;
+        private readonly FeatureFlagClientSettings settings;
 
-        public FeatureFlowFrameworkClient(ClientSettings settings)
+        public FeatureFlowFrameworkClient(FeatureFlagClientSettings settings)
         {
             this.settings = settings;
             this.lazyClient = new Lazy<IFeatureflowClient>(() => FeatureflowClientFactory.Create(settings.ClientKey));
