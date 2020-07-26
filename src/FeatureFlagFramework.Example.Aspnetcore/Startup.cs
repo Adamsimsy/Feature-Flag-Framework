@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FeatureFlagFramework.Clients.LaunchDarkly;
+using FeatureFlagFramework.Clients.JsonToggler;
 using FeatureFlagFramework.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +29,7 @@ namespace FeatureFlagFramework.Example.Aspnetcore
             var clientKey = Configuration.GetValue<string>(Constants.ClientKeyName);
 
             //FeatureFlagFramework - Dependency Injection Configuration
-            services.AddSingleton<IFeatureFlagClient>(c => new LaunchDarklyFrameworkClient(new FeatureFlagClientSettings()
+            services.AddSingleton<IFeatureFlagClient>(c => new JsonTogglerFrameworkClient(new FeatureFlagClientSettings()
             {
                 ClientKey = clientKey
             }));

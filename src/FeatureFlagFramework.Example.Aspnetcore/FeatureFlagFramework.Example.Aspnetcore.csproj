@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\FeatureFlagFramework.Clients.JsonToggler\FeatureFlagFramework.Clients.JsonToggler.csproj" />
     <ProjectReference Include="..\FeatureFlagFramework.Clients.LaunchDarkly\FeatureFlagFramework.Clients.LaunchDarkly.csproj" />
     <ProjectReference Include="..\FeatureFlagFramework.Core\FeatureFlagFramework.Core.csproj" />
     <ProjectReference Include="..\FeatureFlagFramework\FeatureFlagFramework.csproj" />
