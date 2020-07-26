@@ -38,7 +38,7 @@ namespace FeatureFlagFramework.Clients.JsonToggler.Client
                 {
                     // Log the exception
                 }
-            }, TimeSpan.FromSeconds(30));
+            }, TimeSpan.FromSeconds(10));
         }
 
         internal bool BoolVariation(string flagName, bool defaultValue)
