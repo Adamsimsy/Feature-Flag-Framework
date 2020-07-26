@@ -1,7 +1,7 @@
 ﻿var featureFlagFramework = {
     evaluate: function (name, defaultValue) {
         if (featureFlagFramework.initialized === false) {
-            featureFlagFramework.initialize() //TODO lazy load flags correctly.
+            featureFlagFramework.initializeWithoutEndpoint() //TODO lazy load flags correctly.
 
             if (featureFlagFramework.toggleCollection === null) {
                 return defaultValue;
@@ -31,9 +31,23 @@
         };
         xhr.send();
     },
-    initialize: function () {
-        featureFlagFramework.getEndpointFromDataAttribute();
-        featureFlagFramework.getJson(featureFlagFramework.endpoint,
+    on: async function (awaiting, scopedFunction) {
+        if (awaiting === 'ready') {
+            await featureFlagFramework.isReady();
+        }        
+        scopedFunction();
+    },
+    isReady: async function () {
+        while (featureFlagFramework.initialized === false) { await featureFlagFramework.sleep(100); };
+    },
+    sleep:function (ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    },
+    initializeWithoutEndpoint: function () {
+        featureFlagFramework.initializeWithEndpoint(featureFlagFramework.endpoint);
+    },
+    initialize: function(url) {
+        featureFlagFramework.getJson(url,
             function (err, data) {
                 if (err !== null) {
                     alert('Something went wrong: ' + err);
@@ -51,4 +65,3 @@
     initialized : false,
     toggleCollection : null
 }
-featureFlagFramework.initialize();
