@@ -1,0 +1,8 @@
+﻿{
+  "features": [
+    {
+      "name": "test",
+      "enabled": true
+    }
+  ]
+}
