@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using FeatureFlagFramework.Clients.JsonToggler;
@@ -26,7 +27,10 @@ namespace FeatureFlagFramework.Example.Aspnetcore
         {
             services.AddControllersWithViews();
 
-            var clientKey = Configuration.GetValue<string>(Constants.ClientKeyName);
+            //Uncomment to get from appsettings.json
+            //var clientKey = Configuration.GetValue<string>(Constants.ClientKeyName);
+
+            var clientKey = Path.GetFullPath("wwwroot\\flags.json");
 
             //FeatureFlagFramework - Dependency Injection Configuration
             services.AddSingleton<IFeatureFlagClient>(c => new JsonTogglerFrameworkClient(new FeatureFlagClientSettings()
