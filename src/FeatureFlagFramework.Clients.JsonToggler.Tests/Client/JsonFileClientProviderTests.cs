@@ -11,7 +11,7 @@ namespace FeatureFlagFramework.Clients.JsonToggler.Tests.Client
     public class JsonFileClientProviderTests
     {
         [Fact]
-        public void Deserialize_WhenStringIsValidJson_FlagObjectReturned()
+        public void BoolVariation_WhenFlagExistsInJsonFile_FlagObjectReturned()
         {
             //Arrange
             string basePath = Environment.CurrentDirectory;
