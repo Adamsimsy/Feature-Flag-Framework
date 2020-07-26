@@ -6,6 +6,6 @@ namespace FeatureFlagFramework.Clients.JsonToggler
 {
     public static class Constants
     {
-        public static readonly string ClientKeyName = "FeatureFlagFramework:Clients:JsonToggler:Url";
+        public static readonly string ClientKeyName = "FeatureFlagFramework:Clients:JsonToggler:Path";
     }
 }
