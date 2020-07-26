@@ -4,28 +4,34 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FeatureFlagFramework.Clients.JsonToggler.Client
 {
     public class JsonFileClientProvider : IJsonClientProvider
     {
         private readonly IJsonFlagSerializer serializer;
-        private readonly ToggleCollection toggleCollection;
+        private readonly string filePath;
 
         public JsonFileClientProvider(IJsonFlagSerializer serializer, string filePath)
         {
             this.serializer = serializer;
-
-            var jsonString = File.ReadAllText(filePath);
-            toggleCollection = serializer.Deserialize<ToggleCollection>(jsonString);
-
+            this.filePath = filePath;
         }
 
-        public bool BoolVariation(string flagName, bool defaultValue)
+        public async Task<FetchTogglesResult> FetchToggles()
         {
-            var toggle = toggleCollection.GetToggleByName(flagName);
+            var json = await GetJsonString(filePath);
 
-            return toggle != null ? toggle.Enabled : defaultValue;
+            return new FetchTogglesResult()
+            {
+                ToggleCollection = serializer.Deserialize<ToggleCollection>(json)
+            };
+        }
+
+        private async Task<string> GetJsonString(string filePath)
+        {
+            return File.ReadAllText(filePath);
         }
     }
 }

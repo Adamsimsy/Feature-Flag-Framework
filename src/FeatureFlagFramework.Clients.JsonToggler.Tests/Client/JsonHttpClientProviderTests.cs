@@ -20,13 +20,13 @@ namespace FeatureFlagFramework.Clients.JsonToggler.Tests.Client
             mockHttp.When(testUrl)
                     .Respond("application/json", "{ \"features\" : [{ \"name\" : \"example-feature-flag\", \"enabled\": true }] }");
 
-            var provide = new JsonHttpClientProvider(new JsonFlagSerializer(), testUrl, mockHttp.ToHttpClient());
+            var provider = new JsonHttpClientProvider(new JsonFlagSerializer(), testUrl, mockHttp.ToHttpClient());
 
             //Act
-            var result = provide.BoolVariation("example-feature-flag", false);
+            var result = provider.FetchToggles().Result.ToggleCollection.GetToggleByName("example-feature-flag");
 
             //Assert
-            Assert.True(result);
+            Assert.True(result.Enabled);
         }
     }
 }

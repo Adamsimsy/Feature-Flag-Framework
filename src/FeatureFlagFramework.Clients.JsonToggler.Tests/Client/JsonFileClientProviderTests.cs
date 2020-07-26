@@ -22,13 +22,13 @@ namespace FeatureFlagFramework.Clients.JsonToggler.Tests.Client
             //Fix live unit testing path
             fullPath = fullPath.Replace("bin", "").Replace(".vs\\FeatureFlagFramework\\v16\\lut\\0\\t", "");
 
-            var provide = new JsonFileClientProvider(new JsonFlagSerializer(), fullPath);
+            var provider = new JsonFileClientProvider(new JsonFlagSerializer(), fullPath);
 
             //Act
-            var result = provide.BoolVariation("example-feature-flag", false);
+            var result = provider.FetchToggles().Result.ToggleCollection.GetToggleByName("example-feature-flag");
 
             //Assert
-            Assert.True(result);
+            Assert.True(result.Enabled);
         }
     }
 }

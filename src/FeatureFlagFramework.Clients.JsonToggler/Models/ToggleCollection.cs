@@ -1,10 +1,15 @@
-﻿using System;
+﻿using FeatureFlagFramework.Clients.JsonToggler.Scheduling;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace FeatureFlagFramework.Clients.JsonToggler.Models
 {
+    internal sealed class ThreadSafeToggleCollection : ReaderWriterLockSlimOf<ToggleCollection>
+    {
+    }
+
     public class ToggleCollection
     {
         [JsonIgnore]
