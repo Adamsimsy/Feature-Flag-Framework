@@ -1,5 +1,13 @@
 ﻿var featureFlagFramework = {
     evaluate: function (name, defaultValue) {
+        if (featureFlagFramework.initialized === false) {
+            featureFlagFramework.initialize() //TODO lazy load flags correctly.
+
+            if (featureFlagFramework.toggleCollection === null) {
+                return defaultValue;
+            }
+        }
+
         var feature = featureFlagFramework.toggleCollection.features.find(el => el.name === name);
 
         if (feature === undefined) {
@@ -23,14 +31,24 @@
         };
         xhr.send();
     },
+    initialize: function () {
+        featureFlagFramework.getEndpointFromDataAttribute();
+        featureFlagFramework.getJson(featureFlagFramework.endpoint,
+            function (err, data) {
+                if (err !== null) {
+                    alert('Something went wrong: ' + err);
+                } else {
+                    featureFlagFramework.toggleCollection = data;
+                    featureFlagFramework.initialized = true;
+                }
+            });
+    },
+    getEndpointFromDataAttribute: function () {
+        var this_js_script = $('script[src*=FeatureFlagFramework]');
+        featureFlagFramework.endpoint = this_js_script.attr('data-endpoint');
+    },
+    endpoint : null,
+    initialized : false,
     toggleCollection : null
 }
-
-featureFlagFramework.getJson('https://jsontoggler.blob.core.windows.net/examples/flags.json',
-    function (err, data) {
-        if (err !== null) {
-            alert('Something went wrong: ' + err);
-        } else {
-            featureFlagFramework.toggleCollection = data;
-        }
-    });
+featureFlagFramework.initialize();
