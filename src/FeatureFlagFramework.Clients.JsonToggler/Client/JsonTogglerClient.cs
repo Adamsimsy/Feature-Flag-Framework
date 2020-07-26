@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FeatureFlagFramework.Clients.JsonToggler.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -10,67 +11,16 @@ namespace FeatureFlagFramework.Clients.JsonToggler.Client
 {
     public class JsonTogglerClient
     {
-        static readonly HttpClient client = new HttpClient();
-        private readonly string url;
+        private readonly IJsonClientProvider jsonClientProvider;
 
-        public JsonTogglerClient(string url)
+        public JsonTogglerClient(IJsonFlagSerializer serializer, string path)
         {
-            this.url = url;
+            jsonClientProvider = JsonClientProviderFactory.GetProvider(serializer, path);
         }
 
         internal bool BoolVariation(string flagName, bool defaultValue)
         {
-            return false;
-            //try
-            //{
-            //    HttpResponseMessage response = await client.GetAsync(url);
-            //    response.EnsureSuccessStatusCode();
-            //    string responseBody = await response.Content.ReadAsStringAsync();
-            //    // Above three lines can be replaced with new helper method below
-            //    // string responseBody = await client.GetStringAsync(uri);
-
-            //    Console.WriteLine(responseBody);
-            //}
-            //catch (HttpRequestException e)
-            //{
-            //    Console.WriteLine("\nException Caught!");
-            //    Console.WriteLine("Message :{0} ", e.Message);
-            //}
-        }
-
-
-
-        async Task Request()
-        {
-            //using (var httpClient = new HttpClient())
-            //{
-            //    httpClient. = new Uri(this.url);
-            //    httpClient.DefaultRequestHeaders.Accept.Clear();
-            //    httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            //    var response = await httpClient.GetAsync("api/session");
-            //    if (response.StatusCode != HttpStatusCode.OK)
-            //        return null;
-            //    var resourceJson = await response.Content.ReadAsStringAsync();
-            //    return JsonUtility.FromJson<Resource>(resourceJson);
-            //}
-
-
-            //// Call asynchronous network methods in a try/catch block to handle exceptions.
-            //try
-            //{
-            //    HttpResponseMessage response = await client.GetAsync(this.url);
-            //    response.EnsureSuccessStatusCode();
-            //    string responseBody = await response.Content.ReadAsStringAsync();
-            //    // Above three lines can be replaced with new helper method below
-            //    // string responseBody = await client.GetStringAsync(uri);
-
-            //    Console.WriteLine(responseBody);
-            //}
-            //catch (HttpRequestException e)
-            //{
-            //    Console.WriteLine("\nException Caught!");
-            //    Console.WriteLine("Message :{0} ", e.Message);
-            //}
+            return jsonClientProvider.BoolVariation(flagName, defaultValue);
         }
     }
 }

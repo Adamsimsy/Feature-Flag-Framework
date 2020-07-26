@@ -1,5 +1,6 @@
 ﻿using FeatureFlagFramework.Clients.JsonToggler;
 using FeatureFlagFramework.Clients.JsonToggler.Client;
+using FeatureFlagFramework.Clients.JsonToggler.Serialization;
 using FeatureFlagFramework.Core;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace FeatureFlagFramework.Clients.LaunchDarkly
         public JsonTogglerFrameworkClient(FeatureFlagClientSettings settings)
         {
             this.settings = settings;
-            this.lazyClient = new Lazy<JsonTogglerClient>(() => new JsonTogglerClient(settings.ClientKey));
+            this.lazyClient = new Lazy<JsonTogglerClient>(() => new JsonTogglerClient(new JsonFlagSerializer(), settings.ClientKey));
         }
 
         public bool Evaluate(string flagName, bool defaultValue)
