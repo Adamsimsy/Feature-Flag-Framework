@@ -2,7 +2,7 @@
   "features": [
     {
       "name": "example-feature-flag",
-      "enabled": false
+      "enabled": true
     }
   ]
 }

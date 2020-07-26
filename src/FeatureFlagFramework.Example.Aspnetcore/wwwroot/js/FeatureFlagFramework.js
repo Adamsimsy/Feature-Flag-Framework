@@ -1,7 +1,7 @@
 ﻿var featureFlagFramework = {
     evaluate: function (name, defaultValue) {
         if (featureFlagFramework.initialized === false) {
-            featureFlagFramework.initializeWithoutEndpoint() //TODO lazy load flags correctly.
+            featureFlagFramework.attemptInitializeWithDataAttribute() //TODO lazy load flags correctly.
 
             if (featureFlagFramework.toggleCollection === null) {
                 return defaultValue;
@@ -43,10 +43,12 @@
     sleep:function (ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     },
-    initializeWithoutEndpoint: function () {
-        featureFlagFramework.initializeWithEndpoint(featureFlagFramework.endpoint);
+    attemptInitializeWithDataAttribute: function () {
+        featureFlagFramework.getEndpointFromDataAttribute();
+        featureFlagFramework.initialize(featureFlagFramework.endpoint);
     },
-    initialize: function(url) {
+    initialize: function (url) {
+        //TODO: Store flags for configured timespan in browser to improve performance instead of requesting json with every page load.
         featureFlagFramework.getJson(url,
             function (err, data) {
                 if (err !== null) {
@@ -58,10 +60,11 @@
             });
     },
     getEndpointFromDataAttribute: function () {
-        var this_js_script = $('script[src*=FeatureFlagFramework]');
-        featureFlagFramework.endpoint = this_js_script.attr('data-endpoint');
+        var this_js_script = $('script[src*=FeatureFlagFramework]'); //TODO avoid needing JQuery
+        featureFlagFramework.endpoint = this_js_script.attr('data-endpoint'); //TODO add console logs if not able to get data attribute.
     },
     endpoint : null,
     initialized : false,
     toggleCollection : null
 }
+featureFlagFramework.attemptInitializeWithDataAttribute();
