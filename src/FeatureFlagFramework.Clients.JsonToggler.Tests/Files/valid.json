@@ -1,7 +1,7 @@
 ﻿{
   "features": [
     {
-      "name": "test",
+      "name": "example-feature-flag",
       "enabled": true
     }
   ]

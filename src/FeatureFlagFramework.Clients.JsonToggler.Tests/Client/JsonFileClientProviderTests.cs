@@ -25,7 +25,7 @@ namespace FeatureFlagFramework.Clients.JsonToggler.Tests.Client
             var provide = new JsonFileClientProvider(new JsonFlagSerializer(), fullPath);
 
             //Act
-            var result = provide.BoolVariation("test", false);
+            var result = provide.BoolVariation("example-feature-flag", false);
 
             //Assert
             Assert.True(result);

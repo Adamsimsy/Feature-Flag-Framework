@@ -21,26 +21,26 @@ namespace FeatureFlagFramework.Clients.JsonToggler.Tests.Serialization
         public void Deserialize_WhenStringIsValidJson_FlagObjectReturned()
         {
             //Arrange
-            var value = "{ \"features\" : [{ \"name\" : \"test\", \"enabled\": true }] }";
+            var value = "{ \"features\" : [{ \"name\" : \"example-feature-flag\", \"enabled\": true }] }";
 
             //Act
             var result = serializer.Deserialize<ToggleCollection>(value);
 
             //Assert
-            Assert.True(result.GetToggleByName("test").Enabled);
+            Assert.True(result.GetToggleByName("example-feature-flag").Enabled);
         }
 
         [Fact]
         public void Serialize_WhenValidObject_StringReturned()
         {
             //Arrange
-            var value = new ToggleCollection() { Features = new List<FeatureToggle>() { new FeatureToggle() { Name = "Test", Enabled = true } } };
+            var value = new ToggleCollection() { Features = new List<FeatureToggle>() { new FeatureToggle() { Name = "example-feature-flag", Enabled = true } } };
 
             //Act
             var result = serializer.Serialize(value);
 
             //Assert
-            Assert.Contains("Test", result);
+            Assert.Contains("example-feature-flag", result);
             Assert.Contains("true", result);
         }
     }

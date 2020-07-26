@@ -18,12 +18,12 @@ namespace FeatureFlagFramework.Clients.JsonToggler.Tests.Client
             var mockHttp = new MockHttpMessageHandler();
 
             mockHttp.When(testUrl)
-                    .Respond("application/json", "{ \"features\" : [{ \"name\" : \"test\", \"enabled\": true }] }");
+                    .Respond("application/json", "{ \"features\" : [{ \"name\" : \"example-feature-flag\", \"enabled\": true }] }");
 
             var provide = new JsonHttpClientProvider(new JsonFlagSerializer(), testUrl, mockHttp.ToHttpClient());
 
             //Act
-            var result = provide.BoolVariation("test", false);
+            var result = provide.BoolVariation("example-feature-flag", false);
 
             //Assert
             Assert.True(result);
