@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FeatureFlagFramework.Example.Aspnetcore.Models;
 using FeatureFlagFramework.Core;
-using FeatureFlagFramework.Clients.LaunchDarkly;
+using FeatureFlagFramework.Clients.JsonToggler;
 
 namespace FeatureFlagFramework.Example.Aspnetcore.Controllers
 {
@@ -25,7 +25,7 @@ namespace FeatureFlagFramework.Example.Aspnetcore.Controllers
             this.featureFlagClientDependencyInjection = featureFlagClient;
 
             //FeatureFlagFramework - Service Locator Client Retrieval
-            this.featureFlagClientServiceLocator = LaunchDarklyFrameworkClient.Instance;
+            this.featureFlagClientServiceLocator = JsonTogglerFrameworkClient.Instance;
         }
 
         public IActionResult Index()

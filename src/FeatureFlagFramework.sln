@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework", "Fea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Clients.Featureflow", "FeatureFlagFramework.Clients.Featureflow\FeatureFlagFramework.Clients.Featureflow.csproj", "{6278957B-FAA3-4468-8ED2-8B809DF9EAD4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureFlagFramework.Clients.JsonToggler", "FeatureFlagFramework.Clients.JsonToggler\FeatureFlagFramework.Clients.JsonToggler.csproj", "{09F33E9F-D15D-4E98-B678-CC7E1D7650A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagFramework.Clients.JsonToggler.Tests", "FeatureFlagFramework.Clients.JsonToggler.Tests\FeatureFlagFramework.Clients.JsonToggler.Tests.csproj", "{B85A50CB-623A-4FC7-A0A9-F4DA53FDF9F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{6278957B-FAA3-4468-8ED2-8B809DF9EAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6278957B-FAA3-4468-8ED2-8B809DF9EAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6278957B-FAA3-4468-8ED2-8B809DF9EAD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F33E9F-D15D-4E98-B678-CC7E1D7650A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F33E9F-D15D-4E98-B678-CC7E1D7650A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F33E9F-D15D-4E98-B678-CC7E1D7650A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F33E9F-D15D-4E98-B678-CC7E1D7650A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B85A50CB-623A-4FC7-A0A9-F4DA53FDF9F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B85A50CB-623A-4FC7-A0A9-F4DA53FDF9F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B85A50CB-623A-4FC7-A0A9-F4DA53FDF9F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B85A50CB-623A-4FC7-A0A9-F4DA53FDF9F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
