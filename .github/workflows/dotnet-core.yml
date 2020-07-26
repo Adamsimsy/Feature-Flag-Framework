@@ -31,7 +31,12 @@ jobs:
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
           PROJECT_FILE_PATH: src/FeatureFlagFramework.Clients.Featureflow/FeatureFlagFramework.Clients.Featureflow.csproj
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}          
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+    - name: Publish FeatureFlagFramework.Clients.JsonToggler
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: src/FeatureFlagFramework.Clients.JsonToggler/FeatureFlagFramework.Clients.JsonToggler.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}                           
 
     #- name: Test
     #  run: dotnet test --no-restore --verbosity normal
