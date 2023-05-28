@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LaunchDarkly.ServerSdk" Version="5.13.0" />
+    <PackageReference Include="LaunchDarkly.ServerSdk" Version="7.0.3" />
   </ItemGroup>
 
   <ItemGroup>
